@@ -1,6 +1,6 @@
 FROM python:3
 
-ADD ./src /app
+ADD src /app
 ADD requirements.txt /app
 WORKDIR /app
 
