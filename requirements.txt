@@ -2,3 +2,4 @@ beautifulsoup4
 flask
 selenium
 python-dotenv
+requests
