@@ -18,8 +18,17 @@ app = Flask(__name__)
 def base():
     return 'The Incredible Machine'
 
+@app.route("/cf-horror")
+def rtcfhorror():
+    URL = "https://www.rottentomatoes.com/browse/dvd-streaming-all?minTomato=70&maxTomato=100&certified=true&services=amazon;hbo_go;itunes;netflix_iw;vudu;amazon_prime;fandango_now&genres=10&sortBy=release"
+    page = requests.get(URL)
+    scrapedata = re.findall(r'\[\{"id.+\}\]',page.text)
+    for element in scrapedata:
+        return element
+
+
 @app.route("/cf-dvd-streaming-all")
-def rt():
+def rtcf():
     URL = "https://www.rottentomatoes.com/browse/cf-dvd-streaming-all/"
     page = requests.get(URL)
     scrapedata = re.findall(r'\[\{"id.+\}\]',page.text)
