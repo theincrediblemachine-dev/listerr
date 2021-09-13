@@ -36,4 +36,4 @@ def rtcf():
         return element
 
 if __name__ == "__main__":  # There is an error on this line
-    app.run(debug=True, host='0.0.0.0',port=portNumber)
+    app.run(debug=True, host='0.0.0.0',port=portNumber,threaded=True)
